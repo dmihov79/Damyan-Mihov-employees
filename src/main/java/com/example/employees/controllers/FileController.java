@@ -12,19 +12,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.*;
 
 
 @Controller()
 public class FileController {
     @Autowired
-    CSVFileService csvFileService;
+    private CSVFileService csvFileService;
     @GetMapping("/home")
     public String homePage() {
         return "index";
     }
     @PostMapping("/upload")
-    public String uploadCSVFile(Model model, @RequestParam("file") MultipartFile file) {
+    public String uploadCSVFile(Model model, @RequestParam("file") MultipartFile file) throws IOException, ParseException {
         model.addAttribute("pairViews",csvFileService.getEmployeePairsForFile(file));
         return "pair_view_list";
     }

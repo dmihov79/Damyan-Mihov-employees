@@ -6,9 +6,9 @@ public class PairView {
     private Employee employee1;
     private Employee employee2;
     private int projectID;
-    private int daysWorked;
+    private long daysWorked;
 
-    public PairView(Employee employee1, Employee employee2, int projectID, int daysWorked) {
+    public PairView(Employee employee1, Employee employee2, int projectID, long daysWorked) {
         this.employee1 = employee1;
         this.employee2 = employee2;
         this.projectID = projectID;
@@ -30,7 +30,7 @@ public class PairView {
         return projectID;
     }
 
-    public int getDaysWorked() {
+    public long getDaysWorked() {
         return daysWorked;
     }
 
@@ -46,7 +46,7 @@ public class PairView {
         this.projectID = projectID;
     }
 
-    public void setDaysWorked(int daysWorked) {
+    public void setDaysWorked(long daysWorked) {
         this.daysWorked = daysWorked;
     }
 }
