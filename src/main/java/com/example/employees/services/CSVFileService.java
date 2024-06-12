@@ -55,7 +55,7 @@ public class CSVFileService {
                 longestWorkingEmp2 = employee;
             }
         }
-        return new PairView(longestWorkingEmp1, longestWorkingEmp2, projectID, daysWorking1 + daysWorking2);
+        return new PairView(longestWorkingEmp1, longestWorkingEmp2, projectID, Math.max(daysWorking1, daysWorking2));
     }
 
     private long getDifferenceDays(Date d1, Date d2) {
