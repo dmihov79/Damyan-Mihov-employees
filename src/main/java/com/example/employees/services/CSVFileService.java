@@ -22,10 +22,6 @@ public class CSVFileService {
     @Autowired
     private DateUtils dateUtils;
 
-    private Employee getEmployeeFromCSVLine(String line){
-        return new Employee();
-    }
-
     public List<PairView> getEmployeePairsForFile(MultipartFile file) throws IOException, ParseException {
         List<PairView> pairViews = new ArrayList<>();
         List<Employee> employees = getEmployeesFromCSVFile(file);
